@@ -847,6 +847,101 @@ footer p{font-size:0.8rem;color:var(--muted)}
   </div>
 </section>
 
+
+<!-- MAP SECTION -->
+<section id="map" style="padding:0;background:#070707;position:relative;">
+  
+  <!-- Header de la map -->
+  <div style="padding:60px 2.5rem 0;max-width:1120px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
+      <div>
+        <p style="font-family:'Rajdhani',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#F5B800;margin-bottom:0.7rem">Nous trouver</p>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;text-transform:uppercase;color:#ffffff;line-height:0.92;margin-bottom:0.5rem">
+          Notre <span style="color:#F5B800">adresse</span>
+        </h2>
+        <p style="font-size:0.95rem;color:#ffffff;margin-top:0.5rem">
+          37 Rue Stephenson, <strong style="color:#F5B800">75018 Paris</strong>
+        </p>
+      </div>
+      <!-- Info cards rapides -->
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <div style="background:#181818;border:1px solid rgba(245,184,0,0.15);border-radius:10px;padding:1rem 1.4rem;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#F5B800;line-height:1">24/7</div>
+          <div style="font-size:0.7rem;color:#999;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">Disponible</div>
+        </div>
+        <div style="background:#181818;border:1px solid rgba(245,184,0,0.15);border-radius:10px;padding:1rem 1.4rem;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#F5B800;line-height:1">75018</div>
+          <div style="font-size:0.7rem;color:#999;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">Paris</div>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=37+Rue+Stephenson+75018+Paris" target="_blank"
+           style="background:#F5B800;border-radius:10px;padding:1rem 1.4rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;transition:all 0.2s;"
+           onmouseover="this.style.background='#FFD452';this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.background='#F5B800';this.style.transform='none'">
+          <div style="font-size:1.4rem">🗺️</div>
+          <div style="font-family:'Rajdhani',sans-serif;font-size:0.75rem;font-weight:700;color:#111;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px">Itinéraire</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte Google Maps avec overlay dark -->
+  <div style="position:relative;width:100%;height:420px;overflow:hidden;">
+    
+    <!-- Overlay gradient haut -->
+    <div style="position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,#070707,transparent);z-index:2;pointer-events:none"></div>
+    <!-- Overlay gradient bas -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,#070707,transparent);z-index:2;pointer-events:none"></div>
+    <!-- Overlay bords gauche/droite -->
+    <div style="position:absolute;top:0;left:0;bottom:0;width:40px;background:linear-gradient(to right,#070707,transparent);z-index:2;pointer-events:none"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:40px;background:linear-gradient(to left,#070707,transparent);z-index:2;pointer-events:none"></div>
+
+    <!-- Google Maps embed -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.0!2d2.3618!3d48.8924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3b4c5b5b5b%3A0x0!2s37+Rue+Stephenson%2C+75018+Paris!5e0!3m2!1sfr!2sfr!4v1"
+      width="100%" height="420"
+      style="border:0;filter:grayscale(1) invert(0.9) contrast(0.9) brightness(0.4) saturate(0.5);display:block;"
+      allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- Pin personnalisé centré -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);z-index:10;pointer-events:none;text-align:center;">
+      <div style="background:#F5B800;color:#111;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;font-weight:400;letter-spacing:0.1em;padding:0.5rem 1rem;border-radius:6px;white-space:nowrap;box-shadow:0 4px 20px rgba(245,184,0,0.5);margin-bottom:6px">
+        📍 BH DÉPANNAGE — 75018 PARIS
+      </div>
+      <div style="width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid #F5B800;margin:0 auto;filter:drop-shadow(0 4px 8px rgba(245,184,0,0.4))"></div>
+    </div>
+  </div>
+
+  <!-- Bande info bas -->
+  <div style="background:#101010;border-top:1px solid rgba(245,184,0,0.1);padding:1.5rem 2.5rem;">
+    <div style="max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5B800" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span style="font-size:0.85rem;color:#ffffff">37 Rue Stephenson, 75018 Paris</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5B800" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span style="font-size:0.85rem;color:#F5B800;font-weight:700">Ouvert 24h/24 · 7j/7</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5B800" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09"/></svg>
+          <span style="font-size:0.85rem;color:#ffffff">07 81 28 55 86</span>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=37+Rue+Stephenson+75018+Paris" 
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;border:1px solid rgba(245,184,0,0.3);color:#F5B800;padding:0.6rem 1.2rem;border-radius:6px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s"
+         onmouseover="this.style.background='rgba(245,184,0,0.1)';this.style.borderColor='#F5B800'"
+         onmouseout="this.style.background='transparent';this.style.borderColor='rgba(245,184,0,0.3)'">
+        🗺️ Ouvrir dans Google Maps
+      </a>
+    </div>
+  </div>
+
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">BH<span>Dépannage</span></div>
